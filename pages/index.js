@@ -6,22 +6,22 @@ import Partners from "@/features/Home/components/Partners";
 import Testimonials from "@/features/Home/components/Testimonials";
 import DefaultLayout from "@/features/Layouts/DefaultLayout";
 
-export default function Home({featuredProperties}) {
+export default function Home({ featuredProperties }) {
 
   return (
-   <DefaultLayout>
-    <HeroBanner/>
-    <FeaturedProperties featuredProperties={featuredProperties} />
-    <MeetTheTeam />
-    <Partners/>
-    <Testimonials />
+    <DefaultLayout>
+      <HeroBanner />
+      <FeaturedProperties featuredProperties={featuredProperties} />
+      <MeetTheTeam />
+      <Partners />
+      <Testimonials />
     </DefaultLayout>
   )
 }
 
-export async function getStaticProps(){
+export const getStaticProps = async () => {
   const properties = await getProperties(5)
-  return{
-    props: {featuredProperties: properties}
+  return {
+    props: { featuredProperties: properties }
   }
 }
