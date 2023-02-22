@@ -1,7 +1,7 @@
-import {axios} from '@/lib/axios'
+import { axios } from '@/lib/axios'
 
-export const getProperties = async ({num}) => {
-    const {data} = await axios.get('/properties/list', {
+export const getProperties = async ({ num }) => {
+    const { data } = await axios.get('/properties/list', {
         params: {
             locationExternalIDs: '5002,6020',
             purpose: 'for-sale',
@@ -12,7 +12,7 @@ export const getProperties = async ({num}) => {
             hasVideo: true,
             hasFloorPlan: true,
             hasPanorama: true
-          },
+        },
     });
     return data.hits;
 }
